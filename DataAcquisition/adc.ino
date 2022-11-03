@@ -18,7 +18,7 @@ unsigned short Adc_ReadChannel(unsigned char ch)
   ADMUX = (ADMUX & 0xF8)|ch; // clears the bottom 3 bits before ORing
  
 
-  ADCSRA |= (1<<ADSC); //setting ADSC to 1 wlll start the conversion from 
+  ADCSRA |= (1<<ADSC); //setting ADSC to 1 wlll start the conversion from analog to digital
 
   while(ADCSRA & (1<<ADSC)); //checks that the whole conversion is done
 
